@@ -1093,7 +1093,7 @@ function custom_field_distinct_values( array $p_field_def, $p_project_id = ALL_P
 
 		if( ALL_PROJECTS != $p_project_id ) {
 			$t_from .= ' JOIN {bug} bt ON bt.id = cfst.bug_id';
-			$t_where2 = 'AND bt.project_id = ' . db_param();
+			$t_where2 = ' AND bt.project_id = ' . db_param();
 			$t_params[] = $p_project_id;
 		} else {
 			$t_where2 = '';
